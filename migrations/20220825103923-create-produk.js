@@ -17,8 +17,8 @@ module.exports = {
       qty: {
         type: Sequelize.INTEGER
       },
-      image_produk: {
-        type: Sequelize.BLOB("long")
+      image_produk_url: {
+        type: Sequelize.STRING
       },
       name_file: {
         type: Sequelize.STRING

@@ -28,5 +28,14 @@ router.get('/api/users/all',[
 router.post('/api/insert/peroduk',[
     authJwt.verifyToken, upload.single("file")
 ], produkController.produkInsert); 
+router.put('/api/update/peroduk/:id',[
+    authJwt.verifyToken, upload.single("file")
+], produkController.produkUpdate); 
+router.delete('/api/delete/peroduk/:id',[
+    authJwt.verifyToken
+], produkController.produkDelete);
+router.delete('/api/all/peroduk',[
+    authJwt.verifyToken
+], produkController.produkFull);
 
 module.exports = router;
