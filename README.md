@@ -55,7 +55,7 @@ qty : {quantity produk yang ingin di update}
 untuk file optional dikarenakan jika tidak di isi maka akan menggunakan file yang lama
 file : {dan gambar produk berupa foto atau img}
 
-4. Delete Produk
+6. Delete Produk
 '{namadomain}/api/delete/peroduk/:id' METHOD = Delete
 masukan header token pada tahap ini untuk memastikan user sudah login atau belum 
 x-access-token : {token user}
