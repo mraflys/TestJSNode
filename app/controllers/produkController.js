@@ -131,3 +131,37 @@ exports.produkFull = async (req, res) => {
             );
       }
 };
+exports.produkSingle = async (req, res) => {
+    try {
+        models.Produk.findByPk(req.params.id,{
+
+        }).then((produk) => {
+            if(produk){
+                return res.json(
+                    {
+                        "Status": "Sucsess",
+                        "Sucsess": true,
+                        "msg": "Produk Tersedia",
+                        "produk": produk,
+                    }
+                );
+            }else{
+                return res.json(
+                    {
+                        "Status": "Fail",
+                        "Sucsess": true,
+                        "msg": "Produk Tidak Tersedia",
+                    }
+                );
+            }
+        });
+      } catch (error) {
+            console.log(error);
+            return res.json(
+                {
+                    "Sucsess": false,
+                    "msg": "Error",
+                }
+            );
+      }
+};

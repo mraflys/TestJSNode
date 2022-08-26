@@ -19,7 +19,7 @@ router.use(function(req, res, next) {
     );
     next();
   });
-router.post("/api/auth/signin", authcontroller.signin);
+router.post('/api/auth/signin', authcontroller.signin);
 
 router.get('/api/users/all',[
     authJwt.verifyToken
@@ -34,8 +34,11 @@ router.put('/api/update/peroduk/:id',[
 router.delete('/api/delete/peroduk/:id',[
     authJwt.verifyToken
 ], produkController.produkDelete);
-router.delete('/api/all/peroduk',[
+router.get('/api/all/peroduk',[
     authJwt.verifyToken
 ], produkController.produkFull);
+router.get('/api/get/peroduk/:id',[
+    authJwt.verifyToken
+], produkController.produkDelete);
 
 module.exports = router;
